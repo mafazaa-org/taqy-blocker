@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.blocker.dns.app-debug-31:/drawable_ic_launcher.xml.flat",
+        "source": "com.blocker.dns.app-main-33:/drawable/ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-debug-31:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-main-33:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-debug-31:\\drawable_bg_step_item.xml.flat",
+        "source": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-main-33:\\drawable\\bg_step_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-debug-31:\\xml_accessibility_service_config.xml.flat",
+        "source": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-main-33:\\xml\\accessibility_service_config.xml"
+    }
+]

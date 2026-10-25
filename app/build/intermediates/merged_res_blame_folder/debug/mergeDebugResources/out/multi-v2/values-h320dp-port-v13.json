@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.blocker.dns.app-mergeDebugResources-29:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\IDEAPAD\\.gradle\\caches\\transforms-4\\9acfd9dd04c06adec66be43eb6bed2ee\\transformed\\material-1.12.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        }
+    ]
+}
