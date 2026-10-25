@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CleanBrowsing Blocker</string>
+    <string name="accessibility_service_label">CleanBrowsing DNS Enforcer</string>
+    <string name="accessibility_service_description">Automates DNS configuration for Wi-Fi, Private DNS, Chrome, and Brave to enforce CleanBrowsing Family Filter protection.</string>
+    <string name="service_status_inactive">Accessibility Service: INACTIVE</string>
+    <string name="service_status_active">Accessibility Service: ACTIVE</string>
+    <string name="btn_enable_service">Enable Accessibility Service</string>
+    <string name="btn_start_automation">Run Full DNS Enforcement</string>
+    <string name="step_private_dns">1. Configure System Private DNS</string>
+    <string name="step_wifi_dns">2. Configure Wi-Fi DNS</string>
+    <string name="step_chrome_dns">3. Configure Google Chrome DoH</string>
+    <string name="step_brave_dns">4. Configure Brave Browser DoH</string>
+    <string name="status_pending">Pending</string>
+    <string name="status_in_progress">In Progress...</string>
+    <string name="status_completed">Completed</string>
+    <string name="status_failed">Failed / Skipped</string>
+</resources>
