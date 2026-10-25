@@ -28,7 +28,14 @@ class DnsAutomationService : AccessibilityService() {
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         if (event == null) return
 
+        // Ignore events from own app so UI text indicators aren't targeted
+        val eventPkg = event.packageName?.toString() ?: ""
+        if (eventPkg == packageName) return
+
         val root = rootInActiveWindow ?: return
+        val rootPkg = root.packageName?.toString() ?: ""
+        if (rootPkg == packageName) return
+
         if (::stateMachine.isInitialized) {
             stateMachine.onAccessibilityNode(root)
         }

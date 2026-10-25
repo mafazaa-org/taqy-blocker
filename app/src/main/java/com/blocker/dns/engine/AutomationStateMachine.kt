@@ -6,6 +6,7 @@ import android.os.Looper
 import android.util.Log
 import android.view.accessibility.AccessibilityNodeInfo
 import com.blocker.dns.model.AutomationStep
+import com.blocker.dns.service.DnsAutomationService
 import com.blocker.dns.steps.BraveDnsStep
 import com.blocker.dns.steps.ChromeDnsStep
 import com.blocker.dns.steps.PrivateDnsStep
@@ -56,7 +57,8 @@ class AutomationStateMachine(private val context: Context) {
             AutomationStep.PRIVATE_DNS -> {
                 privateDnsStep.processNode(root)
                 if (privateDnsStep.isDone()) {
-                    listener?.onLog("Step 1 (Private DNS) SUCCESS.")
+                    listener?.onLog("Step 1 (Private DNS) SUCCESS. Applied family-filter-dns.cleanbrowsing.org")
+                    DnsAutomationService.instance?.performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_BACK)
                     transitionTo(AutomationStep.WIFI_DNS)
                 }
             }
@@ -64,7 +66,8 @@ class AutomationStateMachine(private val context: Context) {
             AutomationStep.WIFI_DNS -> {
                 wifiDnsStep.processNode(root)
                 if (wifiDnsStep.isDone()) {
-                    listener?.onLog("Step 2 (Wi-Fi DNS) SUCCESS.")
+                    listener?.onLog("Step 2 (Wi-Fi DNS) SUCCESS. Applied 185.228.168.168 / 185.228.169.168")
+                    DnsAutomationService.instance?.performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_BACK)
                     transitionTo(AutomationStep.CHROME_DOH)
                 }
             }

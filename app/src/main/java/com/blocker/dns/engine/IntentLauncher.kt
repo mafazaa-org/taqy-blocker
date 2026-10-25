@@ -20,6 +20,8 @@ object IntentLauncher {
 
     fun launchPrivateDnsSettings(context: Context) {
         val intents = listOf(
+            Intent("android.net.conn.PRIVATE_DNS"),
+            Intent().setClassName("com.android.settings", "com.android.settings.network.PrivateDnsSettingsActivity"),
             Intent("android.settings.NETWORK_PROVIDER_SETTINGS"),
             Intent(Settings.ACTION_NETWORK_OPERATOR_SETTINGS),
             Intent(Settings.ACTION_WIRELESS_SETTINGS),
@@ -29,10 +31,10 @@ object IntentLauncher {
             try {
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 context.startActivity(intent)
-                Log.d(TAG, "Launched intent: ${intent.action}")
+                Log.d(TAG, "Launched intent: ${intent.action ?: intent.component?.className}")
                 return
             } catch (e: Exception) {
-                Log.w(TAG, "Failed launching ${intent.action}: ${e.message}")
+                Log.w(TAG, "Failed launching ${intent.action ?: intent.component?.className}: ${e.message}")
             }
         }
     }

@@ -1,8 +1,13 @@
 package com.blocker.dns.engine
 
+import android.accessibilityservice.AccessibilityService
+import android.accessibilityservice.GestureDescription
+import android.graphics.Path
+import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
 import android.view.accessibility.AccessibilityNodeInfo
+import com.blocker.dns.service.DnsAutomationService
 
 object NodeHelper {
     private const val TAG = "NodeHelper"
@@ -68,16 +73,36 @@ object NodeHelper {
             target = target.parent
         }
 
-        return if (target != null && target.isClickable) {
+        if (target != null && target.isClickable) {
             val success = target.performAction(AccessibilityNodeInfo.ACTION_CLICK)
-            Log.d(TAG, "performClick on '${target.text ?: target.viewIdResourceName}' -> $success")
-            success
-        } else {
-            // Force click direct node
-            val success = node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
-            Log.d(TAG, "performClick fallback on '${node.text ?: node.viewIdResourceName}' -> $success")
-            success
+            if (success) {
+                Log.d(TAG, "performAction ACTION_CLICK success on '${target.viewIdResourceName ?: target.text}'")
+                return true
+            }
         }
+
+        // Gesture tap fallback using screen coordinates (essential for MIUI spinners/unclickable items)
+        val rect = Rect()
+        node.getBoundsInScreen(rect)
+        if (rect.width() > 0 && rect.height() > 0) {
+            val cx = rect.centerX().toFloat()
+            val cy = rect.centerY().toFloat()
+            val dispatched = tapAt(cx, cy)
+            Log.d(TAG, "Gesture tap at ($cx, $cy) on '${node.viewIdResourceName ?: node.text}' -> $dispatched")
+            return dispatched
+        }
+
+        return false
+    }
+
+    fun tapAt(x: Float, y: Float): Boolean {
+        val service = DnsAutomationService.instance ?: return false
+        val path = Path().apply {
+            moveTo(x, y)
+        }
+        val stroke = GestureDescription.StrokeDescription(path, 0, 80)
+        val gesture = GestureDescription.Builder().addStroke(stroke).build()
+        return service.dispatchGesture(gesture, null, null)
     }
 
     fun setText(node: AccessibilityNodeInfo?, text: String): Boolean {
@@ -99,24 +124,5 @@ object NodeHelper {
             target = target.parent
         }
         return target?.performAction(AccessibilityNodeInfo.ACTION_SCROLL_FORWARD) ?: false
-    }
-
-    fun dumpHierarchy(root: AccessibilityNodeInfo?, depth: Int = 0): String {
-        if (root == null) return ""
-        val indent = "  ".repeat(depth)
-        val text = root.text?.toString() ?: ""
-        val desc = root.contentDescription?.toString() ?: ""
-        val resId = root.viewIdResourceName ?: ""
-        val cls = root.className?.toString()?.substringAfterLast('.') ?: ""
-
-        val sb = StringBuilder()
-        sb.append("$indent[$cls] id='$resId' text='$text' desc='$desc'\n")
-        for (i in 0 until root.childCount) {
-            val child = root.getChild(i)
-            if (child != null) {
-                sb.append(dumpHierarchy(child, depth + 1))
-            }
-        }
-        return sb.toString()
     }
 }
