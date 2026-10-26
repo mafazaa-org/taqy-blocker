@@ -18,6 +18,8 @@
         <package android:name="com.brave.browser" />
         <package android:name="com.chrome.beta" />
         <package android:name="com.brave.browser_beta" />
+        <package android:name="com.whatsapp" />
+        <package android:name="com.whatsapp.w4b" />
 
         <intent>
             <action android:name="android.settings.SETTINGS" />
@@ -41,9 +43,9 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:extractNativeLibs="false"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/app_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_launcher"
+        android:roundIcon="@drawable/app_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanBrowsingBlocker" >
         <activity
@@ -55,6 +57,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.blocker.dns.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
         <service
             android:name="com.blocker.dns.service.DnsAutomationService"

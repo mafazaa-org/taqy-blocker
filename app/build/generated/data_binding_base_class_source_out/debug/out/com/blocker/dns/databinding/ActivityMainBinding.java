@@ -4,11 +4,13 @@ package com.blocker.dns.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.blocker.dns.R;
@@ -20,10 +22,13 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final NestedScrollView rootView;
 
   @NonNull
   public final MaterialButton btnEnableService;
+
+  @NonNull
+  public final MaterialButton btnSendLogsWhatsApp;
 
   @NonNull
   public final MaterialButton btnStartAutomation;
@@ -32,7 +37,13 @@ public final class ActivityMainBinding implements ViewBinding {
   public final MaterialCardView cardServiceStatus;
 
   @NonNull
-  public final LinearLayout layoutSteps;
+  public final ImageView ivLogo;
+
+  @NonNull
+  public final LinearLayout layoutLayers;
+
+  @NonNull
+  public final ScrollView scrollLog;
 
   @NonNull
   public final TextView tvLogOutput;
@@ -41,16 +52,16 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView tvServiceStatus;
 
   @NonNull
-  public final TextView tvStepBraveDns;
+  public final TextView tvStep1Status;
 
   @NonNull
-  public final TextView tvStepChromeDns;
+  public final TextView tvStep2Status;
 
   @NonNull
-  public final TextView tvStepPrivateDns;
+  public final TextView tvStep3Status;
 
   @NonNull
-  public final TextView tvStepWifiDns;
+  public final TextView tvStep4Status;
 
   @NonNull
   public final TextView tvSubtitle;
@@ -58,31 +69,35 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView tvTitle;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull MaterialButton btnEnableService, @NonNull MaterialButton btnStartAutomation,
-      @NonNull MaterialCardView cardServiceStatus, @NonNull LinearLayout layoutSteps,
+  private ActivityMainBinding(@NonNull NestedScrollView rootView,
+      @NonNull MaterialButton btnEnableService, @NonNull MaterialButton btnSendLogsWhatsApp,
+      @NonNull MaterialButton btnStartAutomation, @NonNull MaterialCardView cardServiceStatus,
+      @NonNull ImageView ivLogo, @NonNull LinearLayout layoutLayers, @NonNull ScrollView scrollLog,
       @NonNull TextView tvLogOutput, @NonNull TextView tvServiceStatus,
-      @NonNull TextView tvStepBraveDns, @NonNull TextView tvStepChromeDns,
-      @NonNull TextView tvStepPrivateDns, @NonNull TextView tvStepWifiDns,
+      @NonNull TextView tvStep1Status, @NonNull TextView tvStep2Status,
+      @NonNull TextView tvStep3Status, @NonNull TextView tvStep4Status,
       @NonNull TextView tvSubtitle, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.btnEnableService = btnEnableService;
+    this.btnSendLogsWhatsApp = btnSendLogsWhatsApp;
     this.btnStartAutomation = btnStartAutomation;
     this.cardServiceStatus = cardServiceStatus;
-    this.layoutSteps = layoutSteps;
+    this.ivLogo = ivLogo;
+    this.layoutLayers = layoutLayers;
+    this.scrollLog = scrollLog;
     this.tvLogOutput = tvLogOutput;
     this.tvServiceStatus = tvServiceStatus;
-    this.tvStepBraveDns = tvStepBraveDns;
-    this.tvStepChromeDns = tvStepChromeDns;
-    this.tvStepPrivateDns = tvStepPrivateDns;
-    this.tvStepWifiDns = tvStepWifiDns;
+    this.tvStep1Status = tvStep1Status;
+    this.tvStep2Status = tvStep2Status;
+    this.tvStep3Status = tvStep3Status;
+    this.tvStep4Status = tvStep4Status;
     this.tvSubtitle = tvSubtitle;
     this.tvTitle = tvTitle;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public NestedScrollView getRoot() {
     return rootView;
   }
 
@@ -113,6 +128,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnSendLogsWhatsApp;
+      MaterialButton btnSendLogsWhatsApp = ViewBindings.findChildViewById(rootView, id);
+      if (btnSendLogsWhatsApp == null) {
+        break missingId;
+      }
+
       id = R.id.btnStartAutomation;
       MaterialButton btnStartAutomation = ViewBindings.findChildViewById(rootView, id);
       if (btnStartAutomation == null) {
@@ -125,9 +146,21 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.layoutSteps;
-      LinearLayout layoutSteps = ViewBindings.findChildViewById(rootView, id);
-      if (layoutSteps == null) {
+      id = R.id.ivLogo;
+      ImageView ivLogo = ViewBindings.findChildViewById(rootView, id);
+      if (ivLogo == null) {
+        break missingId;
+      }
+
+      id = R.id.layoutLayers;
+      LinearLayout layoutLayers = ViewBindings.findChildViewById(rootView, id);
+      if (layoutLayers == null) {
+        break missingId;
+      }
+
+      id = R.id.scrollLog;
+      ScrollView scrollLog = ViewBindings.findChildViewById(rootView, id);
+      if (scrollLog == null) {
         break missingId;
       }
 
@@ -143,27 +176,27 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvStepBraveDns;
-      TextView tvStepBraveDns = ViewBindings.findChildViewById(rootView, id);
-      if (tvStepBraveDns == null) {
+      id = R.id.tvStep1Status;
+      TextView tvStep1Status = ViewBindings.findChildViewById(rootView, id);
+      if (tvStep1Status == null) {
         break missingId;
       }
 
-      id = R.id.tvStepChromeDns;
-      TextView tvStepChromeDns = ViewBindings.findChildViewById(rootView, id);
-      if (tvStepChromeDns == null) {
+      id = R.id.tvStep2Status;
+      TextView tvStep2Status = ViewBindings.findChildViewById(rootView, id);
+      if (tvStep2Status == null) {
         break missingId;
       }
 
-      id = R.id.tvStepPrivateDns;
-      TextView tvStepPrivateDns = ViewBindings.findChildViewById(rootView, id);
-      if (tvStepPrivateDns == null) {
+      id = R.id.tvStep3Status;
+      TextView tvStep3Status = ViewBindings.findChildViewById(rootView, id);
+      if (tvStep3Status == null) {
         break missingId;
       }
 
-      id = R.id.tvStepWifiDns;
-      TextView tvStepWifiDns = ViewBindings.findChildViewById(rootView, id);
-      if (tvStepWifiDns == null) {
+      id = R.id.tvStep4Status;
+      TextView tvStep4Status = ViewBindings.findChildViewById(rootView, id);
+      if (tvStep4Status == null) {
         break missingId;
       }
 
@@ -179,9 +212,10 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, btnEnableService,
-          btnStartAutomation, cardServiceStatus, layoutSteps, tvLogOutput, tvServiceStatus,
-          tvStepBraveDns, tvStepChromeDns, tvStepPrivateDns, tvStepWifiDns, tvSubtitle, tvTitle);
+      return new ActivityMainBinding((NestedScrollView) rootView, btnEnableService,
+          btnSendLogsWhatsApp, btnStartAutomation, cardServiceStatus, ivLogo, layoutLayers,
+          scrollLog, tvLogOutput, tvServiceStatus, tvStep1Status, tvStep2Status, tvStep3Status,
+          tvStep4Status, tvSubtitle, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

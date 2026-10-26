@@ -1425,6 +1425,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gold_accent
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -2101,7 +2102,9 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color stroke_color
 color surface
+color surface_card
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -2993,6 +2996,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_step_item
@@ -3203,6 +3207,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btnEnableService
+id btnSendLogsWhatsApp
 id btnStartAutomation
 id buttonPanel
 id cache_measures
@@ -3336,11 +3341,12 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id ivLogo
 id jumpToEnd
 id jumpToStart
 id labeled
 id layout
-id layoutSteps
+id layoutLayers
 id left
 id leftToRight
 id legacy
@@ -3483,6 +3489,7 @@ id screen
 id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
+id scrollLog
 id scrollView
 id scrollable
 id search_badge
@@ -3587,10 +3594,10 @@ id transition_transform
 id triangle
 id tvLogOutput
 id tvServiceStatus
-id tvStepBraveDns
-id tvStepChromeDns
-id tvStepPrivateDns
-id tvStepWifiDns
+id tvStep1Status
+id tvStep2Status
+id tvStep3Status
+id tvStep4Status
 id tvSubtitle
 id tvTitle
 id unchecked
@@ -3811,6 +3818,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 plurals mtrl_badge_content_description
+raw bird_chirp
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -3838,10 +3846,14 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string accessibility_guide_button
+string accessibility_guide_message
+string accessibility_guide_title
 string accessibility_service_description
 string accessibility_service_label
 string androidx_startup
 string app_name
+string app_subtitle
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string bottomsheet_action_collapse
@@ -3850,6 +3862,7 @@ string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
 string btn_enable_service
+string btn_send_logs_whatsapp
 string btn_start_automation
 string call_notification_answer_action
 string call_notification_answer_video_action
@@ -3862,6 +3875,8 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+string countdown_headline
+string countdown_subtitle
 string error_a11y_label
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -3869,7 +3884,14 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string initial_log
 string item_view_role_description
+string layer_1
+string layer_2
+string layer_3
+string layer_4
+string layers_header
+string log_header
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -3975,6 +3997,11 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string pre_start_warning_body
+string pre_start_warning_cancel
+string pre_start_warning_confirm
+string pre_start_warning_headline
+string pre_start_warning_title
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
@@ -3988,10 +4015,9 @@ string status_completed
 string status_failed
 string status_in_progress
 string status_pending
-string step_brave_dns
-string step_chrome_dns
-string step_private_dns
-string step_wifi_dns
+string status_skipped
+string toast_enable_service
+string toast_success
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -5273,3 +5299,4 @@ styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
 styleable include constraintSet
 xml accessibility_service_config
+xml file_paths

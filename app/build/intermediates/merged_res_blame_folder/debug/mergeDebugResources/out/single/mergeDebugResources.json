@@ -1,11 +1,27 @@
 [
     {
-        "merged": "com.blocker.dns.app-debug-31:/drawable_ic_launcher.xml.flat",
-        "source": "com.blocker.dns.app-main-33:/drawable/ic_launcher.xml"
+        "merged": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-debug-31:\\drawable_app_logo.jpg.flat",
+        "source": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-main-33:\\drawable\\app_logo.jpg"
+    },
+    {
+        "merged": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-debug-31:\\drawable_ic_launcher.xml.flat",
+        "source": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-main-33:\\drawable\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-debug-31:\\raw_bird_chirp.wav.flat",
+        "source": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-main-33:\\raw\\bird_chirp.wav"
+    },
+    {
+        "merged": "com.blocker.dns.app-debug-31:/xml_accessibility_service_config.xml.flat",
+        "source": "com.blocker.dns.app-main-33:/xml/accessibility_service_config.xml"
     },
     {
         "merged": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-debug-31:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-main-33:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-debug-31:\\xml_file_paths.xml.flat",
+        "source": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-main-33:\\xml\\file_paths.xml"
     },
     {
         "merged": "C:\\Users\\IDEAPAD\\.gradle\\daemon\\8.7\\com.blocker.dns.app-debug-31:\\drawable_bg_step_item.xml.flat",

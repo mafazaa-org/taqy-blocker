@@ -1,13 +1,13 @@
 package com.blocker.dns.model
 
 enum class AutomationStep(val title: String) {
-    IDLE("Ready"),
-    PRIVATE_DNS("Private DNS Setup"),
-    WIFI_DNS("Wi-Fi DNS Setup"),
-    CHROME_DOH("Chrome Secure DNS Setup"),
-    BRAVE_DOH("Brave Secure DNS Setup"),
-    COMPLETED("Enforcement Completed"),
-    FAILED("Automation Failed")
+    IDLE("جاهز"),
+    PRIVATE_DNS("الطبقة الأولى"),
+    WIFI_DNS("الطبقة الثانية"),
+    CHROME_DOH("الطبقة الثالثة"),
+    BRAVE_DOH("الطبقة الرابعة"),
+    COMPLETED("اكتمل التفعيل"),
+    FAILED("فشل التفعيل")
 }
 
 sealed class StepState {
